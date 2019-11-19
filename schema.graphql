@@ -1,0 +1,94 @@
+type Bill {
+    title: String!
+    year: String!
+    jurisdiction: String!
+}
+
+type Bills_Digest {
+    committee: String
+    legislature: String
+}
+
+type Book {
+    title: String!
+    authors_footnote: [String]
+    authors_bibliography: [String]
+    publication_details: String
+}
+
+type Case {
+    case_name: String!
+    citation: String!
+    alt_citations: [String]
+}
+
+type Legislative_Materials {
+    australian_constitutions(
+        title: String
+        jurisdiction: String
+    ): [Constitution]
+    bills(
+        title: String
+        jurisdiction: String
+        year: Int
+    ): [Bill]
+    bills_digests(
+        title: String
+        year: Int
+    ): [Bills_Digest]
+    statutes(
+        title: String
+        jurisdiction: String
+        year: Int
+    ): [Statute]
+}
+
+type Acts {
+    title: String!
+    year: String
+    jurisdiction: String
+}
+
+type Constitution {
+    title: String
+    section_number: String
+    jurisdiction: String
+}
+
+type Statute {
+    title: String
+    year: String
+    jurisdiction: String
+}
+
+type Treaty {
+    treaty_title: String!
+    short_title: String
+    treaty_series: String!
+    party_names: String
+    date_opened_for_signature: String
+    date_of_entry_into_force: String
+}
+
+type Query {
+    books(
+        title: String!,
+        max_results: Int
+    ): [Book]
+    cases(
+        case_name: String!,
+        citation: String,
+        jurisdiction: String,
+        max_results: Int
+    ): [Case]
+    legislative_materials: Legislative_Materials
+    treaties(
+        treaty_title: String!,
+        party_names: String,
+        max_results: Int
+    ): [Treaty]
+}
+
+schema {
+    query: Query
+}
