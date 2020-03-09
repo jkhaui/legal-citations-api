@@ -2,7 +2,7 @@
 
 ## Demonstration Purposes Only
 
-View live demo: https://j3k2p62id1.execute-api.ap-southeast-2.amazonaws.com/dev/
+GraphQL Playground live demo: https://hgibqzetag.execute-api.ap-southeast-2.amazonaws.com/dev/
 
 ![demo](https://misc-4.s3-ap-southeast-1.amazonaws.com/gql.gif)
 
