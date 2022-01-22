@@ -18,7 +18,7 @@
     "graphql-yoga": "^1.17.4",
     "immutable": "^4.0.0-rc.12",
     "natural": "^0.6.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "serverless": "^1.51.0",
     "serverless-mysql": "^1.4.0"
   },
